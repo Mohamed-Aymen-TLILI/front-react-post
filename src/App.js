@@ -8,11 +8,14 @@ import HomePage from "./pages/HomePage";
 import ProfilPage from "./pages/ProfilPage"
 import ArticlesPages from "./pages/ArticlesPages";
 import LoginPage from "./pages/LoginPage";
+import CreateArticlePage from "./pages/CreateArticlePage";
+import ArticlePage from "./pages/ArticlePage";
 import AuthAPI from "./services/authAPI";
 import RegisterPage from "./pages/RegisterPage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './App.css';
+
 
 
 AuthAPI.setup();
@@ -37,11 +40,17 @@ const App = () => {
             <Route path="/login" element={<LoginPage/>} />
             <Route path="/register" element={<RegisterPage/>} />
             <Route path="/profil" element={ <PrivateRoute/>}>
-            <Route path="/profil" element={<ProfilPage/> }/>
-              </Route>
+              <Route path="/profil" element={<ProfilPage/> }/>
+            </Route>
             <Route path="/articles" element={ <PrivateRoute />}>
               <Route path="/articles" element={<ArticlesPages/> }/>
-              </Route>
+            </Route>
+            <Route path="/createarticle" element={ <PrivateRoute />}>
+              <Route path="/createarticle" element={<CreateArticlePage/> }/>
+            </Route>
+            <Route path="/article/:id" element={ <PrivateRoute />}>
+              <Route path="/article/:id" element={<ArticlePage/> }/>
+            </Route>
             <Route path="/" element={<HomePage/> }/>
           </Routes>
         </main>

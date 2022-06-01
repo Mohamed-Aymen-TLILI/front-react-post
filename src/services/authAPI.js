@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { LOGIN_API } from "../config";
+import { LOGIN_API, SIGNUP_API } from "../config";
 
 /**
  * Déconnexion (suppression du token du localStorage et sur Axios)
@@ -67,9 +67,14 @@ function isAuthenticated() {
   return false;
 }
 
+function register(user) {
+  return axios.post(SIGNUP_API, user);
+}
+
 export default {
   authenticate,
   logout,
   setup,
-  isAuthenticated
+  isAuthenticated,
+  register
 };

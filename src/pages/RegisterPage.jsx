@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Field from "./../components/forms/Field";
-import { Link } from "react-router-dom";
-import usersAPI from "../services/usersAPI";
+import AuthAPI from "../services/authAPI";
 import { toast } from "react-toastify";
 
 const RegisterPage = ({ history }) => {
+    let navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -40,15 +41,17 @@ const RegisterPage = ({ history }) => {
     }
 
     try {
-      await usersAPI.register(user);
+      await AuthAPI.register(user);
       setErrors({});
 
       // TODO : Flash success
       toast.success(
         "Vous êtes désormais inscrit, vous pouvez vous connecter !"
       );
-      history.replace("/login");
+      navigate("/login");
     } catch (error) {
+    console.log(error);
+    console.log(error.response.data);
       const { violations } = error.response.data;
 
       if (violations) {
@@ -67,8 +70,8 @@ const RegisterPage = ({ history }) => {
       <form onSubmit={handleSubmit}>
         <Field
           name="name"
-          label="Nom de famille"
-          placeholder="Votre jolie prénom"
+          label="username"
+          placeholder="Votre username"
           error={errors.name}
           value={user.name}
           onChange={handleChange}
