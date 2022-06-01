@@ -30,7 +30,7 @@ const ArticlesPage = () => {
             url: POST_API + "/" + id,
             headers: {"Authorization": 'Bearer '+ token}, 
             data: {
-                "userId": Number(userId), // This is the body part
+                "userId": Number(userId)// This is the body part
             }});
       console.log(id);
       toast.success("L'article a bien été supprimée");
