@@ -12,6 +12,8 @@ import CreateArticlePage from "./pages/CreateArticlePage";
 import ArticlePage from "./pages/ArticlePage";
 import AuthAPI from "./services/authAPI";
 import RegisterPage from "./pages/RegisterPage";
+import PostsAdminPages from "./pages/PostsAdminPage";
+import UsersAdminPages from "./pages/UsersAdminPages"
 import { ToastContainer, toast } from "react-toastify";
 import 'bootstrap/dist/js/bootstrap.bundle';
 import "react-toastify/dist/ReactToastify.css";
@@ -51,6 +53,12 @@ const App = () => {
             </Route>
             <Route path="/article/:id" element={ <PrivateRoute />}>
               <Route path="/article/:id" element={<ArticlePage/> }/>
+            </Route>
+            <Route path="/admin/posts/admin" element={ <PrivateRoute />}>
+              <Route path="/admin/posts/admin" element={<PostsAdminPages/> }/>
+            </Route>
+            <Route path="/admin/users/admin" element={ <PrivateRoute />}>
+              <Route path="/admin/users/admin" element={<UsersAdminPages/> }/>
             </Route>
             <Route path="/" element={<HomePage/> }/>
           </Routes>
