@@ -13,6 +13,7 @@ import ArticlePage from "./pages/ArticlePage";
 import AuthAPI from "./services/authAPI";
 import RegisterPage from "./pages/RegisterPage";
 import { ToastContainer, toast } from "react-toastify";
+import 'bootstrap/dist/js/bootstrap.bundle';
 import "react-toastify/dist/ReactToastify.css";
 import './App.css';
 

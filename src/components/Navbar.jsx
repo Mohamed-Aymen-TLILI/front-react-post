@@ -25,11 +25,8 @@ const Navbar = ({ history }) => {
       <button
         className="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor03"
-        aria-controls="navbarColor03"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarColor03"
       >
         <span className="navbar-toggler-icon" />
       </button>
