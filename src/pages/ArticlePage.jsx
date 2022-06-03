@@ -99,7 +99,7 @@ const ArticlePage = () => {
                                   value={content}
                                   onChange={(e) => setContent(e.target.value)}/>
                 </div>
-                <button  type="submit" className="btn btn-success mt-5" onClick={ e => submitForm(e, post.id)}>Submit</button>
+                <button  type="submit" className="btn btn-outline-danger mt-5" onClick={ e => submitForm(e, post.id)}>Submit</button>
             </> );
             }
 }

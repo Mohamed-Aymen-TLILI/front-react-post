@@ -40,7 +40,7 @@ const PostsAdminPages = () => {
             (result) => {
                 setIsLoaded(true);
                 setUsers(result.data);
-                console.log(result.data);
+
             },
             (error) => {
                 setIsLoaded(true);

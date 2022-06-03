@@ -59,7 +59,6 @@ const ProfilPage = () => {
             (result) => {
                 setIsLoaded(true);
                 setUser(result.data);
-                console.log(result.data);
             },
             (error) => {
                 setIsLoaded(true);
@@ -83,7 +82,7 @@ const ProfilPage = () => {
          <div className="jumbotron">
       {!form ? <div> <h1 className="display-3">{user.name}</h1>
        <p className="lead mt-10">
-         <button  className="btn btn-primary btn-lg mt-10" onClick={(e) => handleSubmit(e)}>
+         <button  className="btn btn-outline-danger btn-lg mt-10" onClick={(e) => handleSubmit(e)}>
             <p>
             Modifier votre username
             </p>
@@ -99,7 +98,7 @@ const ProfilPage = () => {
           
           />
            <div className="form-group mt-3 d-flex">
-            <button  className="btn btn-primary btn-lg mt-10 col-2" onClick={(e) => handleUsername(e)}> Modifiez</button>
+            <button  className="btn btn-outline-danger btn-lg mt-10 col-2" onClick={(e) => handleUsername(e)}> Modifiez</button>
             <div className="col-1"></div>
             <button  className="btn btn-warning btn-lg mt-10 col-2" onClick={(e) => cancelUsername(e)}> Annulez</button>
 

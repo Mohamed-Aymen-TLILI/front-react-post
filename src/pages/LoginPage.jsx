@@ -62,7 +62,7 @@ const LoginPage = ({ history }) => {
         />
 
         <div className="form-group mt-3">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-outline-danger">
             Je me connecte
           </button>
         </div>

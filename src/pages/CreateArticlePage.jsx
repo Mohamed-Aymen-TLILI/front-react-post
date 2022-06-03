@@ -21,9 +21,9 @@ const CreateArticlePage = () => {
   const submitForm =  async(e) => {
     e.preventDefault(); 
   const formData = new FormData()
+  formData.append('image', file);
   formData.append('title', title);
   formData.append('content', content);
-  formData.append('imageUrl', file);
   formData.append('userId', parseInt(userId))
     for(var pair of formData.entries()) {
   console.log(`${pair[0]}: ${pair[1]}`);
@@ -58,10 +58,10 @@ const CreateArticlePage = () => {
           onChange={(e) => setContent(e.target.value)}
         />
         <div className="update-image mt-3">
-            <input type="file"  className="form-control" name="imageUrl" onChange={e => { setFile(e.target.files[0])}}/>
+            <input type="file"  className="form-control" name="image" onChange={e => { setFile(e.target.files[0])}}/>
         </div>
     
-        <button  type="submit" className="btn btn-success mt-5" onClick={ e => submitForm(e)}>Submit</button>
+        <button  type="submit" className="btn btn-outline-danger mt-5" onClick={ e => submitForm(e)}>Submit</button>
       </form>
     </div>
   );

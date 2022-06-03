@@ -68,21 +68,21 @@ const ArticlesPage = () => {
                 <div className="container">
                     <h1>Tous les articles publiés</h1>
                     <div className="d-flex">
-                        <button className="btn btn-outline-info btn-sm" onClick={() => {navigate("/createarticle/")}}>Publier un article</button>
+                        <button className="btn btn-outline-danger btn-sm" onClick={() => {navigate("/createarticle/")}}>Publier un article</button>
                     </div>
                     {articles.map((article) => (
                         <div className="card text-center mt-5 "key={article.id}>
                             <div className="card-header">   
-                                <img className="card-img-top " src={article.imageUrl || img}  alt="Card "/> 
+                                <img className="img-thumbnail" src={article.imageUrl || img}  alt="Card "/> 
                         </div>
 
                         <div >
 
                             <div className="card-body">
-                                 <Link to={"/article/" + article.id} className="card-title">{article.title}</Link>
+                                 <Link to={"/article/" + article.id} className=" text-danger">{article.title}</Link>
                                 <p className="card-text">{article.content}</p>
                                    {userId === `${article.User.id}` ? 
-                                   <Button className="btn btn-danger"  variant="outlined" color="primary" onClick={ (e) => deletePost(e, article.id)}>
+                                   <Button className="btn btn-outline-danger"  variant="outlined" color="primary" onClick={ (e) => deletePost(e, article.id)}>
                                         Delete
                                     </Button> 
                                     :  null}

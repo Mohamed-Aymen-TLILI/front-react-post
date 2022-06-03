@@ -4,6 +4,8 @@ import AuthAPI from "../services/authAPI";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 import { toast } from "react-toastify";
+import logo from "../images/logo.jpeg"
+
 
 const Navbar = ({ history }) => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -18,6 +20,9 @@ const Navbar = ({ history }) => {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid col-2">
+      <img src={logo} alt="" width="150" height="75" className="d-inline-block align-text-top"/>
+    </div>
        <div className="container-fluid">
       <NavLink className="navbar-brand" to="/">
         Groupomania
@@ -53,14 +58,14 @@ const Navbar = ({ history }) => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/login" className="btn btn-success">
+                <NavLink to="/login" className="btn btn-outline-danger">
                   Connexion !
                 </NavLink>
               </li>
             </>
           )) || (
             <li className="nav-item">
-              <button onClick={handleLogout} className="btn btn-danger">
+              <button onClick={handleLogout} className="btn btn-outline-danger">
                 Déconnexion
               </button>
             </li>

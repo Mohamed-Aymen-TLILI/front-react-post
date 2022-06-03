@@ -37,7 +37,6 @@ const PostsAdminPages = () => {
             (result) => {
                 setIsLoaded(true);
                 setArticles(result.data);
-                console.log(result.data);
             },
             (error) => {
                 setIsLoaded(true);

@@ -105,10 +105,10 @@ const RegisterPage = ({ history }) => {
         />
 
         <div className="form-group  mt-3">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-outline-danger">
             Confirmation
           </button>
-          <Link to="/login" className="btn btn-link">
+          <Link to="/login" className="btn btn-link text-danger">
             J'ai déjà un compte
           </Link>
         </div>
